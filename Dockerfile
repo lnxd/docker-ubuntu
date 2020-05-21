@@ -17,3 +17,12 @@ RUN echo "Set disable_coredump false" >> /etc/sudo.conf
 RUN useradd docker
 RUN echo 'docker:docker' | sudo chpasswd
 RUN usermod -aG sudo docker
+
+# Set environment variables.
+ENV HOME /home/docker
+
+# Define working directory.
+WORKDIR /home/docker
+
+# Define default command.
+CMD ["bash"]
