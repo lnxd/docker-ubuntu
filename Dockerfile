@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 # Install default apps
 RUN export DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 RUN apt-get install -y python3 python3-pip nano ncdu p7zip-full wget git sudo curl
 
 # Set timezone
