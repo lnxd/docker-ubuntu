@@ -19,6 +19,8 @@ RUN useradd docker
 RUN echo 'docker:docker' | sudo chpasswd
 RUN usermod -aG sudo docker
 RUN chsh -s $(which zsh) docker
+RUN mkdir /home/docker
+RUN touch /home/docker/.zshrc
 
 # Clean up apt
 RUN apt-get clean all
